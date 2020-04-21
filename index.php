@@ -16,10 +16,10 @@ require 'include/connection.php';
 <?
 if(isset($_SESSION['logged_user'])){
 ?>
-	<div class="header">
-		<p>Привет, <?=$_SESSION['logged_user']['login'];?>.</p>
-		<a href='logout.php'>Выйти</a>
-	</div>
+	
+	<p>Привет, <?=$_SESSION['logged_user']['login'];?>.</p>
+	<a href='logout.php'>Выйти</a>
+	<hr>
 
 	<button class='show-add-Task'>Создать задачу</button>
 	<form id='add-form' action='create.php' method='POST'>
@@ -32,7 +32,8 @@ if(isset($_SESSION['logged_user'])){
 		<p>
 			<p>
 				<strong>Описание</strong>
-			</p>	
+			</p>
+			
 			<textarea class='task-Description' name='task_description' rows='5' cols='50'></textarea>
 		</p>
 		<p>
@@ -40,8 +41,19 @@ if(isset($_SESSION['logged_user'])){
 		</p>
 	</form>
 	<div class ='users-tasks'>
-		<div class ='items'>
+		<div class ='item'>
 			
 		</div>
 	</div>
+<?}else{?>
+		<a href='login.php'>Войти</a>
+		<a href='signup.php'>Регистрация</a>
 <?}?>
+
+<script src='libs/js/jquery-3.4.1.js'></script>
+<script src='assets/js/create.js'></script>
+<script src='assets/js/delete.js'></script>
+<script src='assets/js/script.js'></script>
+<script src='assets/js/update.js'></script>
+</body>
+</html>
