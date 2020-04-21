@@ -46,8 +46,14 @@ if(isset($_SESSION['logged_user'])){
 		</div>
 	</div>
 <?}else{?>
-		<a href='login.php'>Войти</a>
-		<a href='signup.php'>Регистрация</a>
+		<div class = "hello-title-wrapper">
+		<span><h1>Добро пожаловать в Pink Panther</h1></span>
+		<div class = 'hello-title-btns'>
+			<a href='login.php'>Войти</a>
+			<br>
+			<a href='signup.php'>Регистрация</a>
+		</div>
+	</div>
 <?}?>
 
 <script src='libs/js/jquery-3.4.1.js'></script>
