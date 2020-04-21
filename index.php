@@ -41,7 +41,7 @@ if(isset($_SESSION['logged_user'])){
 		</p>
 	</form>
 	<div class ='users-tasks'>
-		<div class ='item'>
+		<div class ='items'>
 			
 		</div>
 	</div>
