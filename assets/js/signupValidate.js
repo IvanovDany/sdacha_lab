@@ -31,10 +31,27 @@ mail.change(function(){
         $(".isMail").empty();
     }
 })
+pass.change(function(){
+    if(pass.val().match(passRegExp)==null){
+        isPass=false;
+        $(".isPass").empty();
+        $(".isPass").append('Пароль может содержать любые латинские, цифры, символы "!" "@" "#" "$" "%" "?" "=" "*" "&" , но быть от 8 до 16 символов.');
+    }else{
+        isPass=true;
+        $(".isPass").empty();
+    }  
+})
 
-
-
-
+passConfirm.change(function(){
+    if(pass.val()==passConfirm.val()){
+        isPassConf=true;
+        $(".isPassConf").empty();
+    }else{
+        isPassConf=false;
+        $(".isPassConf").empty();
+        $(".isPassConf").append('Пароли не совпадают.');     
+    }
+})
 $('body').on('click', '.sign-up-submit', function(e){
     e.preventDefault();
     if(islogin && isMail ){
