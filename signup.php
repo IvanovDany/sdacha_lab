@@ -11,12 +11,19 @@ if(isset($data['do_signup'])){
 		$err[]='Введите логин.';
 	}
 
+	if(strlen(trim($data['login']))<3){
+		$err[]='Логин должен состоять минимум из 3 симоволов.';
+	}
+
 	if(trim($data['email'])==''){
 		$err[]='Введите email.';
 	}
 
 	if($data['password']==''){
 		$err[]='Введите пароль.';
+	}
+	if(strlen(trim($data['password']))<8){
+		$err[]='Пароль должен состоять минимум из 8 симоволов.';
 	}
 
 	if($data['password_2']!=$data['password']){
@@ -70,34 +77,41 @@ if(isset($data['do_signup'])){
 					<p>
 						<strong>Ваш логин</strong>
 					</p>
-					<input type="text" name="login" value =<?=$data['login']?> required>
+					<input class="sign-up-login" type="text" name="login" required value =<?=$data['login']?> >
 				</p>
 				<p>
 					<p>
 						<strong>Ваш e-mail</strong>
 					</p>
-					<input type="email" name="email" value =<?=$data['email']?> required>
+					<input class="sign-up-mail" type="email" name="email" required value =<?=$data['email']?> >
 				</p>
 				<p>
 					<p>
 						<strong>Ваш пароль</strong>
 					</p>
-					<input type="password" name="password" >
+					<input class="sign-up-pass" type="password" name="password" >
 				</p>
 				<p>
 					<p>
 						<strong>Повторите пароль</strong>
 					</p>
-					<input type="password" name="password_2" >
+					<input class="sign-up-pass-confirm" type="password" name="password_2" >
 				</p>
 				<p>
-					<button type="submit" name="do_signup">Зарегистрироваться</button>
+					<button class="sign-up-submit" type="submit" name="do_signup">Зарегистрироваться</button>
 				</p>
 				<a href="index.php">Назад</a>
+				<div class = "error">
+				<p class = 'isLogin'></p>
+				<p class = 'isMail'></p>
+				<p class = 'isPass'></p>
+				<p class = 'isPassConf'></p>
+				<p class = 'isNotGood'></p>
+				</div>
 			</form>
 		</div>
-			
 
-		<script src='libs/js/jquery-3.4.1.js'></script>
+		<script src='libs/js/jquery-3.4.1.js'></script>	
+		<script src='assets/js/signupValidate.js'></script>
 	</body>
 </html>

@@ -100,6 +100,14 @@ h1, h2, h3, h4, h5, h6, p {
   color:red;
 }
 
+.error .isLogin, .error .isMail, .error .isPass, .error .isPassConf {
+  color:red;
+}
+
+.error .isNotGood {
+  color:#a00;
+}
+
 .success{
   color:green;
 }
